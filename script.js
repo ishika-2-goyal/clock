@@ -4,27 +4,27 @@ const hourHand=document.querySelector(".hour-hand");
 function setDate(){
     const currentTime=new Date();
     
-    const seconds=current.getSeconds();
+    const seconds=currentTime.getSeconds();
     const secondDeg=((seconds/60)*360)+90;
-    secondHand.Style.transform=`rotate(${secondDeg}deg);`
+    secondHand.style.transform=`rotate(${secondDeg}deg)`;
 
-    const mins=current.getMinutes();
+    const mins=currentTime.getMinutes();
     const minsDeg=((mins/60)*360)+90;
-    minHand.Style.transform=`rotate(${minsDeg}deg);`
+    minHand.style.transform=`rotate(${minsDeg}deg)`;
 
-    const hours=current.getHours();
+    const hours=currentTime.getHours();
     const hoursDeg=((hours/12)*360)+90;
-    hourHand.Style.transform=`rotate(${hoursDeg}deg);`
+    hourHand.style.transform=`rotate(${hoursDeg}deg)`;
 
     if(seconds==0){
-        secondHand.Style.transitionDuration='0s';
-        minHand.Style.transitionDuration='0s';
-        hourHand.Style.transitionDuration='0s';
+        secondHand.style.transitionDuration='0s';
+        minHand.style.transitionDuration='0s';
+        hourHand.style.transitionDuration='0s';
     }
     else{
-        secondHand.Style.transitionDuration='0.05s';
-        minHand.Style.transitionDuration='0.05s';
-        hourHand.Style.transitionDuration='0.05s';
+        secondHand.style.transitionDuration='0.05s';
+        minHand.style.transitionDuration='0.05s';
+        hourHand.style.transitionDuration='0.05s';
     }
     requestAnimationFrame(setDate);
 }
